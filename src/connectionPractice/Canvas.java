@@ -1,7 +1,7 @@
+package connectionPractice;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Canvas extends JFrame {
     private JTextArea textArea;
@@ -32,13 +32,13 @@ public class Canvas extends JFrame {
         buttonPanel.add(okButton);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        okButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                isOKPressed = true;
-                textArea.append(inputField.getText());
-            }
-        });
+//        okButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                isOKPressed = true;
+//                textArea.append(inputField.getText());
+//            }
+//        });
 
     }
 
@@ -46,7 +46,11 @@ public class Canvas extends JFrame {
        textArea.append(text + "\n");
     }
 
-    public JTextField getInputField() {
-        return inputField;
+    public String getInputField() {
+        return inputField.getText();
+    }
+
+    public void setInputField(String text) {
+        this.inputField.setText(text);
     }
 }
